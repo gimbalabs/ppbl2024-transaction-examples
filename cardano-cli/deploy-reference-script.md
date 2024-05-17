@@ -1,13 +1,13 @@
 ```bash
-tx_in_fees=3554d51ba2596a621bf8d17503fdf85310d240d9a1f26b497a41cecfae62b458#1
+tx_in_fees=1099aafc99e18e36da5933ff81942519f796c6041f5073d99af05c6965d63704#1
 sender=addr_test1qryqg2zrfyhh8qf2j8tg8zg42grnjanj6kjkwzqlrv0dynqey0knpanmr7ef6k2eagl2j4qdukh7r8zke92p56ah0crquj2ugx
-validator_path=my-faucet-script.plutus
+validator_path=aiken-faucet-002.plutus
 
 cardano-cli transaction build \
 --babbage-era \
 --testnet-magic 1 \
 --tx-in $tx_in_fees \
---tx-out $sender+17925290 \
+--tx-out $sender+4990980 \
 --tx-out-reference-script-file $validator_path \
 --change-address $sender \
 --out-file deploy-reference-script.draft

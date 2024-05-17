@@ -36,7 +36,6 @@ policy_id=5e74a87d8109db21fe3d407950c161cd2df7975f0868e10682a3dbfe
 token_hex=7070626c323032342d73636166666f6c642d746f6b656e
 mint_script_file_path=my-token-policy.script
 sender=addr_test1qryqg2zrfyhh8qf2j8tg8zg42grnjanj6kjkwzqlrv0dynqey0knpanmr7ef6k2eagl2j4qdukh7r8zke92p56ah0crquj2ugx
-sender_key=payment.skey
 
 cardano-cli transaction build \
 --babbage-era \
