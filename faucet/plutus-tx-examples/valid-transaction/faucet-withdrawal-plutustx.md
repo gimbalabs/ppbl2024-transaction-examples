@@ -21,11 +21,11 @@ cardano-cli transaction build \
 --spending-tx-in-reference $ref_utxo \
 --spending-plutus-script-v2 \
 --spending-reference-tx-in-inline-datum-present \
---spending-reference-tx-in-redeemer-file redeemer.json \
+--spending-reference-tx-in-redeemer-file ../redeemers/faucet-redeemer-correct.json \
 --tx-out $sender+"2000000 + 1000000 $unit" \
 --tx-out $sender+"2000000 + 1 $ppbl_token_unit" \
 --tx-out $faucet_addr+"2000000 + $quantity $unit" \
---tx-out-inline-datum-file faucet-datum-plutustx.json \
+--tx-out-inline-datum-file ../datums/faucet-datum-plutustx.json \
 --change-address $sender \
 --out-file deposit-tokens-in-faucet.draft
 
