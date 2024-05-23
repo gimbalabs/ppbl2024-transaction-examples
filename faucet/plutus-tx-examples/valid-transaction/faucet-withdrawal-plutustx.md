@@ -1,4 +1,4 @@
-
+### Valid Transaction Example:
 
 ```bash
 tx_in_ppbl2024=21644e01dc5abb1b9c6888dfa2075ce336d87c576a9518f94506ccff4de4721a#0
@@ -39,3 +39,6 @@ cardano-cli transaction submit \
 --tx-file deposit-tokens-in-faucet.signed \
 --testnet-magic 1
 ```
+
+
+## Invalid Transactions
