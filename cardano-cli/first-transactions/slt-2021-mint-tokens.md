@@ -25,8 +25,6 @@ cardano-cli transaction policyid --script-file my-token-policy.script
 ```
 
 
-
-
 ## Minting Transaction
 ```bash
 tx_in=c279890452a2bf507be24630aa50d6d60952c1862e56abe907e33a3188d6bbdb#0
@@ -59,5 +57,4 @@ cardano-cli transaction sign \
 cardano-cli transaction submit \
 --tx-file mint-native-assets.signed \
 --testnet-magic 1
-
 ```
