@@ -53,5 +53,5 @@ cardano-cli transaction submit \
 --testnet-magic 1
 ```
 
-### Project for students:
+### Assignment 102 for students:
 - Deploy a utxo with a different `faucetTokenName` and/or a different `withdrawalAmount`. Share with other students.
