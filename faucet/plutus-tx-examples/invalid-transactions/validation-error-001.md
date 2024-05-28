@@ -1,5 +1,13 @@
 # Error Example #1
 
+## Task:
+Build an example transaction that fails with the validation error: `"Input must include PPBL 2024 token"`.
+
+## Notes:
+- `cardano-cli transaction build` is a helpful utility, because we can build as many transactions as we want to without signing and submitting. It's only at the submit stage that transaction are actually executed on-chain.
+- In these examples, our goal is to see specific errors as written in [Faucet.Validator](https://github.com/gimbalabs/ppbl2024-plutus-examples/blob/f674596625d32fda7391e994ec838e60ec2c4846/src/Faucet/Validator.hs#L81C20-L81C56). Including these error messages make a script larger and more expensive to execute, so often in production code, errors are removed. For our purposes, we are working on testnet and our goal is to learn (more than it is to save on tx fees!)
+
+## Example
 
 ```bash
 faucet_token_unit=
@@ -14,7 +22,7 @@ tx_in_ppbl2024=
 tx_in_fees=
 ```
 
-What happens if we do not include the `tx_in_ppbl2024` and the output, like this:
+What happens if we do not include the `tx_in_ppbl2024` and the corresponding output, like this:
 
 ```bash
 cardano-cli transaction build \
@@ -32,16 +40,6 @@ cardano-cli transaction build \
 --tx-out-inline-datum-file valid-faucet-datum.json \
 --change-address $sender \
 --out-file deposit-tokens-in-faucet.draft
-
-cardano-cli transaction sign \
---signing-key-file $sender_key \
---testnet-magic 1 \
---tx-body-file deposit-tokens-in-faucet.draft \
---out-file deposit-tokens-in-faucet.signed
-
-cardano-cli transaction submit \
---tx-file deposit-tokens-in-faucet.signed \
---testnet-magic 1
 ```
 
 ## Challenge:
