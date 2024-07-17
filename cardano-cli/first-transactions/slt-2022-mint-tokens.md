@@ -1,4 +1,5 @@
-# Minting
+# Lesson 202.2
+## Minting Native Assets with Cardano CLI
 
 ## Step 1: Make Keys
 ```bash
