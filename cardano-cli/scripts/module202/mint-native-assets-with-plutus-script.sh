@@ -12,28 +12,20 @@ receiver_addr=$1
 token_name=$2
 quantity=$3
 
-mkdir mint-$token_name
-cd mint-$token_name
-
 # Use yours
-sender=
-sender_key=
+sender=addr_test1qrm2py5drdq6p7xxh444jnks09d44qtfcuvzrts23n9klhkeqn5l8a5zqdvx4zafffqy2hn7r6grra5y8rx3gjqgttzqhwxky0
+sender_key=/home/james/hd2/01-projects/ppbl2024/ppbl2024-transaction-examples/wallets/payment.skey
 
-# Automatically create a new policy id
-cardano-cli address key-gen --verification-key-file mint-$token_name.vkey --signing-key-file mint-$token_name.skey
-cardano-cli address key-hash --payment-verification-key-file mint-$token_name.vkey --out-file mint-$token_name.pkh
 
-echo "{
-    \"keyHash\": \"$(cat mint-$token_name.pkh)\",
-    \"type\": \"sig\"
-}" >> mint-$token_name.script
+if [ -e "mint-secret-number.cs" ]; then
+    rm mint-secret-number.cs
+fi
 
-cardano-cli transaction policyid --script-file mint-$token_name.script >> $token_name.cs
+cardano-cli transaction policyid --script-file mint-secret-number.plutus >> mint-secret-number.cs
 
 # Set variables
-mint_script_file_path=mint-$token_name.script
-mint_signing_key_file_path=mint-$token_name.skey
-policy_id=$(cat $token_name.cs)
+mint_script_file_path=mint-secret-number.plutus
+policy_id=$(cat mint-secret-number.cs)
 
 # Use get_address_biggest_lovelace from ../utils.sh
 # to get the utxo with the most lovelace
@@ -49,16 +41,16 @@ cardano-cli transaction build \
     --babbage-era \
     --testnet-magic 1 \
     --tx-in $tx_in \
+    --tx-in-collateral $tx_in \
     --tx-out $receiver_addr+"1500000 + $quantity $policy_id.$token_hex" \
     --mint "$quantity $policy_id.$token_hex" \
     --mint-script-file $mint_script_file_path \
+    --mint-redeemer-value 1618033988 \
     --change-address $sender \
-    --required-signer $mint_signing_key_file_path \
     --out-file mint-native-assets.draft
 
 # Sign Tx
 cardano-cli transaction sign \
-    --signing-key-file $mint_signing_key_file_path \
     --signing-key-file $sender_key \
     --testnet-magic 1 \
     --tx-body-file mint-native-assets.draft \
