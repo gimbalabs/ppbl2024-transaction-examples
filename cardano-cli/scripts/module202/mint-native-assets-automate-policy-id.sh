@@ -2,7 +2,7 @@
 
 # A
 
-# Usage ./mint-native-assets.sh receiver_addr token_name quantity
+# Usage ./mint-native-assets-automate-policy-id.sh receiver_addr token_name quantity
 
 # Helpful functions
 . ../utils.sh
@@ -16,8 +16,8 @@ mkdir mint-$token_name
 cd mint-$token_name
 
 # Use yours
-sender=
-sender_key=
+sender=addr_test1qqfhqt3sftrswlqes64g2np3s9lfpv6y4e9p49fktdmf9wkd4kqaslg84edaudn8pgcjwtz2vdmcj4gguzg3vzp9hwas0dp446
+sender_key=/Users/gimbalabs/para/01-local-projects/ppbl2024/ppbl2024-transaction-examples/ppbl-2024-cli-wallet/payment.skey
 
 # Automatically create a new policy id
 cardano-cli address key-gen --verification-key-file mint-$token_name.vkey --signing-key-file mint-$token_name.skey
