@@ -13,8 +13,8 @@ token_name=$2
 quantity=$3
 
 # Use yours
-sender=addr_test1qqfhqt3sftrswlqes64g2np3s9lfpv6y4e9p49fktdmf9wkd4kqaslg84edaudn8pgcjwtz2vdmcj4gguzg3vzp9hwas0dp446
-sender_key=/Users/gimbalabs/para/01-local-projects/ppbl2024/ppbl2024-transaction-examples/ppbl-2024-cli-wallet/payment.skey
+sender=
+sender_key=
 
 
 if [ -e "mint-secret-number.cs" ]; then
