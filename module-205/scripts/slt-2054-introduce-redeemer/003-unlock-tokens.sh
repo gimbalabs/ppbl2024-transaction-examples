@@ -3,12 +3,14 @@
 . ../env.sh
 . ../utils.sh
 
+ref=$1
+
+reference_utxo=e62ffce45c6f5d0141ca1a9ee6db38545bf63154ffdd774f75213cccd5e69fe5#1
+
 sender_tx_in=$(get_address_biggest_lovelace ${sender})
 
-validator_addr=$(cardano-cli address build --testnet-magic 1 --payment-script-file introduce-context-aiken.plutus)
+validator_addr=$(cardano-cli address build --testnet-magic 1 --payment-script-file introduce-redeemer-aiken.plutus)
 validator_tx_in=$(get_address_biggest_lovelace ${validator_addr})
-
-reference_utxo=4cbe6fd16e515ff8da30a50ae9909f3524b3ba570cf8d19ebe6ab83b93ce2690#0
 
 cardano-cli transaction build \
 --babbage-era \
@@ -19,8 +21,9 @@ cardano-cli transaction build \
 --spending-tx-in-reference $reference_utxo \
 --spending-plutus-script-v2 \
 --spending-reference-tx-in-inline-datum-present \
---spending-reference-tx-in-redeemer-value 321 \
---invalid-before 65882800 \
+--spending-reference-tx-in-redeemer-file Claim.json \
+--invalid-before 65967405 \
+--invalid-hereafter 65968405 \
 --change-address $sender \
 --out-file unlock-tokens.draft
 
