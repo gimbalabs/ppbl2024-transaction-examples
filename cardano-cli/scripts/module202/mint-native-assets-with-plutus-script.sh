@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# A
-
 # Usage ./mint-native-assets-with-plutus-script.sh receiver_addr token_name quantity
 
 # Helpful functions
