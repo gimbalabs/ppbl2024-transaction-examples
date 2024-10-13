@@ -4,7 +4,7 @@
 
 # Helpful functions
 . env.sh # See note on Line 14
-. ../utils.sh
+. utils.sh
 
 # Args
 receiver_addr=$1
@@ -60,10 +60,10 @@ echo "{
       \"keyHash\": \"$(cat mint-$deadlineSlot.pkh)\"
     }
   ]
-}" >> $mint_script_file_path
+}" >>$mint_script_file_path
 
 # Create Policy ID:
-cardano-cli transaction policyid --script-file $mint_script_file_path >> $deadlineSlot.cs
+cardano-cli transaction policyid --script-file $mint_script_file_path >>$deadlineSlot.cs
 policy_id=$(cat $deadlineSlot.cs)
 
 # Use get_address_biggest_lovelace from ../utils.sh
@@ -77,26 +77,27 @@ echo "Minting $deadlineSlot"
 
 # Build Tx
 cardano-cli transaction build \
-    --babbage-era \
-    --testnet-magic 1 \
-    --tx-in $tx_in \
-    --tx-out $receiver_addr+"1500000 + $quantity $policy_id.$token_hex" \
-    --mint "$quantity $policy_id.$token_hex" \
-    --mint-script-file $mint_script_file_path \
-    --invalid-hereafter $deadlineSlot \
-    --change-address $sender \
-    --required-signer $mint_signing_key_file_path \
-    --out-file mint-native-assets.draft
+  --babbage-era \
+  --testnet-magic 1 \
+  --tx-in $tx_in \
+  --tx-out $receiver_addr+"1500000 + $quantity $policy_id.$token_hex" \
+  --mint "$quantity $policy_id.$token_hex" \
+  --mint-script-file $mint_script_file_path \
+  --invalid-hereafter $deadlineSlot \
+  --change-address $sender \
+  --required-signer $mint_signing_key_file_path \
+  --out-file mint-native-assets.draft
 
 # Sign Tx
 cardano-cli transaction sign \
-    --signing-key-file $mint_signing_key_file_path \
-    --signing-key-file $sender_key \
-    --testnet-magic 1 \
-    --tx-body-file mint-native-assets.draft \
-    --out-file mint-native-assets.signed
+  --signing-key-file $mint_signing_key_file_path \
+  --signing-key-file $sender_key \
+  --testnet-magic 1 \
+  --tx-body-file mint-native-assets.draft \
+  --out-file mint-native-assets.signed
 
 # Submit Tx
 cardano-cli transaction submit \
-    --tx-file mint-native-assets.signed \
-    --testnet-magic 1
+  --tx-file mint-native-assets.signed \
+  --testnet-magic 1
+

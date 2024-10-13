@@ -10,21 +10,23 @@ reference_address=addr_test1qpy5pxpz96h673r9qu592hurf2tw72nx6fn5eytksgf5ghydkhtd
 
 tx_in_fees=$(get_address_biggest_lovelace ${sender})
 
-cardano-cli transaction build \
---babbage-era \
---testnet-magic 1 \
---tx-in $tx_in_fees \
---tx-out $reference_address+$min_utxo_lovelace \
---tx-out-reference-script-file $validator_path \
---change-address $sender \
---out-file deploy-reference-script.draft
+cardano-cli conway transaction build \
+	--testnet-magic 1 \
+	--tx-in $tx_in_fees \
+	--tx-out $reference_address+$min_utxo_lovelace \
+	--tx-out-reference-script-file $validator_path \
+	--change-address $sender \
+	--out-file deploy-reference-script.draft
 
-cardano-cli transaction sign \
---signing-key-file $sender_key \
---testnet-magic 1 \
---tx-body-file deploy-reference-script.draft \
---out-file deploy-reference-script.signed
+cardano-cli conway transaction sign \
+	--signing-key-file $sender_key \
+	--testnet-magic 1 \
+	--tx-body-file deploy-reference-script.draft \
+	--out-file deploy-reference-script.signed
 
-cardano-cli transaction submit \
---tx-file deploy-reference-script.signed \
---testnet-magic 1
+cardano-cli conway transaction submit \
+	--tx-file deploy-reference-script.signed \
+	--testnet-magic 1
+
+echo "Successful txHash:"
+echo $(cardano-cli conway transaction txid --tx-file deploy-reference-script.signed)
