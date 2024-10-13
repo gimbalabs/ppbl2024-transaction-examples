@@ -10,7 +10,7 @@ description=$4
 imageUrlArray=$(split_string $imageUrl)
 echo $imageUrlArray
 
-descriptionArray=$(split_string $description)
+descriptionArray=$(split_string "$description")
 
 echo "
 {
@@ -33,4 +33,4 @@ echo "
 }
 " >metadata-$assetName.json
 
-http://reallylongimageurls.com/my-image-with-long-file-name.jpg
+# http://reallylongimageurls.com/my-image-with-long-file-name.jpg
