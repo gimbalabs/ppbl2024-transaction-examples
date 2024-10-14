@@ -22,12 +22,15 @@ echo "Duration: $posix_duration"
 echo "End time: $end_posix_time"
 
 echo "{
+\"constructor\": 0,
+\"fields\": [{
     \"constructor\": 0,
     \"fields\": [
         {
             \"int\": $end_posix_time
         }
     ]
+  }]
 }" >datum-$ref.json
 
 cardano-cli conway transaction build \
@@ -38,12 +41,12 @@ cardano-cli conway transaction build \
 	--change-address $sender \
 	--out-file lock-tokens-and-deploy-validator.draft
 
-cardano-cli conway transaction sign \
-	--signing-key-file $sender_key \
-	--testnet-magic 1 \
-	--tx-body-file lock-tokens-and-deploy-validator.draft \
-	--out-file lock-tokens-and-deploy-validator.signed
-
-cardano-cli conway transaction submit \
-	--tx-file lock-tokens-and-deploy-validator.signed \
-	--testnet-magic 1
+# cardano-cli conway transaction sign \
+# 	--signing-key-file $sender_key \
+# 	--testnet-magic 1 \
+# 	--tx-body-file lock-tokens-and-deploy-validator.draft \
+# 	--out-file lock-tokens-and-deploy-validator.signed
+#
+# cardano-cli conway transaction submit \
+# 	--tx-file lock-tokens-and-deploy-validator.signed \
+# 	--testnet-magic 1
