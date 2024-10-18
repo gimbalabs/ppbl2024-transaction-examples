@@ -3,11 +3,9 @@
 . ../env.sh
 . ../utils.sh
 
-validator_path=$1
-lovelace_to_lock=$2
-duration_minutes=$3
-admin_pkh=$4
-ref=$5
+lovelace_to_lock=$1
+duration_minutes=$2
+ref=$3
 
 current_posix=$(($(date +%s) * 1000))
 
@@ -24,14 +22,11 @@ echo "{
     \"fields\": [
         {
             \"int\": $unlock_time
-        },
-        {
-            \"bytes\": \"$admin_pkh\"
         }
     ]
-}" >slt-2054-datum-$ref.json
+}" >slt-2055-datum-$ref.json
 
-validator_addr=$(cardano-cli address build --testnet-magic 1 --payment-script-file $validator_path)
+validator_addr=$(cardano-cli address build --testnet-magic 1 --payment-script-file slt-2055.plutus)
 
 tx_in=$(get_address_biggest_lovelace ${sender})
 
@@ -39,7 +34,7 @@ cardano-cli conway transaction build \
   --testnet-magic 1 \
   --tx-in $tx_in \
   --tx-out $validator_addr+$lovelace_to_lock \
-  --tx-out-inline-datum-file slt-2054-datum-$ref.json \
+  --tx-out-inline-datum-file slt-2055-datum-$ref.json \
   --change-address $sender \
   --out-file lock-tokens-slt2054-$ref.draft
 
