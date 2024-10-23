@@ -33,4 +33,3 @@ echo "
 }
 " >metadata-$assetName.json
 
-# http://reallylongimageurls.com/my-image-with-long-file-name.jpg

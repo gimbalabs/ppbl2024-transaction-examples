@@ -1,0 +1,13 @@
+{
+  "type": "all",
+  "scripts": [
+    {
+      "type": "before",
+      "slot": 66669523
+    },
+    {
+      "type": "sig",
+      "keyHash": "f539af01a847af2cd1e4b15e17851ceb54770a395e4e7c796e69991e"
+    }
+  ]
+}

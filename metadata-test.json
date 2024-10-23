@@ -1,0 +1,24 @@
+{
+  "721": {
+    "aaaa": {
+      "assetName": {
+        "name": "tokenName",
+        "image": [
+          "https://gimbalabs.com/g.png"
+        ],
+        "mediaType": "img/png",
+        "description": [
+          "Description string"
+        ],
+        "files": [
+          {
+            "mediaType": "img/png",
+            "src": [
+              "https://gimbalabs.com/g.png"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

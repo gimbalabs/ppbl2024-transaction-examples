@@ -1,0 +1,20 @@
+
+{
+  "721": {
+    "afafafaf": {
+      "myNewTokenName": {
+        "name": "myNewTokenName",
+        "image": ["https://example.com/img.png"], 
+        "mediaType": "img/png",
+        "description": ["My"],
+        "files": [
+          {
+            "mediaType": "img/png",
+            "src": ["https://example.com/img.png"]
+          }
+        ]
+      }
+    }
+  }
+}
+

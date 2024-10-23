@@ -1,0 +1,20 @@
+
+{
+  "721": {
+    "afafafaf": {
+      "myNewLongTokenName": {
+        "name": "myNewLongTokenName",
+        "image": ["http://reallylongimageurls.com/all-long-urls/my-image-wi","th-long-file-name.jpg"], 
+        "mediaType": "img/png",
+        "description": ["My"],
+        "files": [
+          {
+            "mediaType": "img/png",
+            "src": ["http://reallylongimageurls.com/all-long-urls/my-image-wi","th-long-file-name.jpg"]
+          }
+        ]
+      }
+    }
+  }
+}
+
