@@ -5,8 +5,8 @@
 
 slot=$1
 
-ex2_validator_addr=addr_test1wr7xdtlcvsfhvspptnfrwkmvexh3kwv069pzhmk3fvhvj4q575evy
-ex2_reference_utxo=b5e5347ad28203f5b961a6d9e2040decf7aa8a240b40c1ac7d7923fecf13697e#0
+ex2_validator_addr=addr_test1wzvx4awpyfszq33s3ghlzpyp2a55276sjgw8f0m5jum7luquj3c4u
+ex2_reference_utxo=1b0612cb1b26ac54b277741c98b5bb735a93919b17fe08e7e87a823037c4acfc#0
 
 sender_tx_in=$(get_address_biggest_lovelace ${sender})
 

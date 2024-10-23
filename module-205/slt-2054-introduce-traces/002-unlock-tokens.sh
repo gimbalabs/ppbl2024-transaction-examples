@@ -5,8 +5,12 @@
 
 slot=$1
 
-ex3_validator_addr=addr_test1wrfnpwc7q449exndnrf436sjljrvcmvd4wkwua4e0s2nhgquu8hy5
-ex3_reference_utxo=0a6457a520107ec68d87b2c13f3bff7dfbc549aa55ff9394035dfeaa9df42602#0
+ex3_validator_addr=addr_test1wz64nnxqvcgghn49pw0tny6jgvk3hrezvn8nyccuqfm4d4ga9yy6f
+ex3_reference_utxo=d3e141bd955441346e08df3a092319da98324a0690b2989ca1f86b75be9a5b6b#0
+
+# ex3_validator_addr=addr_test1wz4hghsfegcta2set8g02y262fes4vf3u0gl7qyjrn5v9kqqzzydw
+# ex3_reference_utxo=117c77f218ad719b221923857f3adb553889a59b50bff9d5044fa9452aec81ca#0
+
 
 sender_tx_in=$(get_address_biggest_lovelace ${sender})
 

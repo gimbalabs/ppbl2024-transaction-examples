@@ -6,7 +6,7 @@
 validator_addr=$1
 slot=$2
 
-reference_utxo=adbb7232013c2f7aa1c7fe295c557fe35d22db634acb08410614d6829e433a70#0
+reference_utxo=4a93b62fd95c07efeb56e03d5cc32424149e239e3f4689566a062e6a5a22f0e7#0
 
 sender_tx_in=$(get_address_biggest_lovelace ${sender})
 
