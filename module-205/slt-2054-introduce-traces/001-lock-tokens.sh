@@ -12,7 +12,7 @@ cardano-cli conway transaction build \
 	--testnet-magic 1 \
 	--tx-in $tx_in \
 	--tx-out $validator_addr+$lovelace_to_lock \
-	--tx-out-inline-datum-file datum.json \
+	--tx-out-inline-datum-value 2024 \
 	--change-address $sender \
 	--out-file lock-tokens.draft
 
