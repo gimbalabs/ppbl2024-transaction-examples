@@ -5,8 +5,8 @@
 
 slot=$1
 
-ex3_validator_addr=addr_test1wps5l95fz9293nsk43vnaj5uj3lpjgxpvmf3yv3mnyalz9c5try0c
-ex3_reference_utxo=c3dcfd5e0ddac34e6089c794fdb3210bc9330257f4948549118d6e3e473ac0f5#0
+ex3_validator_addr=addr_test1wps4xf5w8l6e5rnre3pzrdp4gkmw0x68make7rcsf8azumgceme40
+ex3_reference_utxo=55318b209c1d15d5b4dc3b9fcfa1618dae1b13fd8cbc2fc07b46081a337fba8c#0
 
 sender_tx_in=$(get_address_biggest_lovelace ${sender})
 

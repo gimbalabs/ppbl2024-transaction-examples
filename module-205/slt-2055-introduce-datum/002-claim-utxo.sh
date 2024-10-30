@@ -6,8 +6,8 @@
 start_slot=$1
 end_slot=$(expr $start_slot + 1200)
 
-validator_addr=addr_test1wqw9veqvlh9j7f7ea9cptefrnvp4rqcs0hfvuqnpzr93f6cqnyum4
-reference_utxo=6e60fd768529089f001a30d4b43b373c52240e92a5ff05cb5a171a0ad57db783#0
+validator_addr=addr_test1wp68tpl58h0nc4nctluhz4j8ypjqetpcrnly9ss6mn0zxgqg6sw6s
+reference_utxo=e1e15d2a348537350c4dcfbf6e5220468b81d80c2a5e32dcb058411e1c4e4bc2#0
 sender_tx_in=$(get_address_biggest_lovelace ${sender})
 
 validator_tx_in=$(get_address_biggest_lovelace ${validator_addr})
