@@ -76,7 +76,7 @@ token_hex=$(printf '%s' "$deadlineSlot" | xxd -p)
 echo "Minting $deadlineSlot"
 
 # Build Tx
-cardano-cli transaction build \
+cardano-cli conway transaction build \
   --babbage-era \
   --testnet-magic 1 \
   --tx-in $tx_in \
@@ -89,7 +89,7 @@ cardano-cli transaction build \
   --out-file mint-native-assets.draft
 
 # Sign Tx
-cardano-cli transaction sign \
+cardano-cli conway transaction sign \
   --signing-key-file $mint_signing_key_file_path \
   --signing-key-file $sender_key \
   --testnet-magic 1 \
@@ -97,7 +97,7 @@ cardano-cli transaction sign \
   --out-file mint-native-assets.signed
 
 # Submit Tx
-cardano-cli transaction submit \
+cardano-cli conway transaction submit \
   --tx-file mint-native-assets.signed \
   --testnet-magic 1
 
