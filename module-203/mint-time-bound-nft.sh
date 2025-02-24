@@ -77,7 +77,6 @@ echo "Minting $deadlineSlot"
 
 # Build Tx
 cardano-cli conway transaction build \
-  --babbage-era \
   --testnet-magic 1 \
   --tx-in $tx_in \
   --tx-out $receiver_addr+"1500000 + $quantity $policy_id.$token_hex" \
