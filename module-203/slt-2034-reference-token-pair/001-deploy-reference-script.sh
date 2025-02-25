@@ -29,4 +29,4 @@ cardano-cli conway transaction submit \
 --tx-file deploy-reference-script.signed \
 --testnet-magic 1
 
-echo "$(cardano-cli transaction txid --tx-file deploy-reference-script.signed)#0" > reference-script-$ref.utxo
+echo "$(cardano-cli conway transaction txid --tx-file deploy-reference-script.signed)#0" > reference-script-$ref.utxo
