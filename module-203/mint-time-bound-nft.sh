@@ -7,14 +7,20 @@
 . utils.sh
 
 # Args
-receiver_addr=$1
+# The receiver address can be a your eternal wallet address. Or any other address.
+# Make sure you comment back in the receiver_addr variable when running this script. Please replace with your own values.
+
+#receiver_addr=addr_test1qzzupdekugenk4ugkzxg6z6a8rztkvkg84u797q49j9fv9d36ymgr49rpt2wwnwq2letam8hlstsv4g23q3dqf3eh86saxr0ax
 quantity=1
 
 # ----------------------------------------------------------------------------------------------------------------------
 # ** Set Address and Signing Key **
-# Use yours:
-# sender=
-# sender_key=
+# Use the address you created in lesson 102.1
+# Make sure you uncomment the sender and sender_key variables when running this script. Replace with your own values. 
+#sender=addr_test1qqfjh0px4hlq65xtkm7yp06uu3mnxpqsvek473nqk9w03mf6ud3mth5yzg5js25zeqd9q7x34psa75l4e8dnmtqesnusz86qd2
+# Use the signing key you created in lesson 102.1. Notice I am setting this to a file path that is above the current directory.
+#sender_key=../payment.skey
+
 # Optionally, create env.sh file with the following:
 # export sender=
 # export sender_key=
@@ -63,7 +69,7 @@ echo "{
 }" >>$mint_script_file_path
 
 # Create Policy ID:
-cardano-cli transaction policyid --script-file $mint_script_file_path >>$deadlineSlot.cs
+cardano-cli conway transaction policyid --script-file $mint_script_file_path >>$deadlineSlot.cs
 policy_id=$(cat $deadlineSlot.cs)
 
 # Use get_address_biggest_lovelace from ../utils.sh
