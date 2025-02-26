@@ -3,7 +3,6 @@
 # Usage ./mint-time-bound-nft.sh receiver_addr
 
 # Helpful functions
-. env.sh # See note on Line 14
 . utils.sh
 
 # Args
@@ -20,11 +19,6 @@ quantity=1
 #sender=addr_test1qqfjh0px4hlq65xtkm7yp06uu3mnxpqsvek473nqk9w03mf6ud3mth5yzg5js25zeqd9q7x34psa75l4e8dnmtqesnusz86qd2
 # Use the signing key you created in lesson 102.1. Notice I am setting this to a file path that is above the current directory.
 #sender_key=../payment.skey
-
-# Optionally, create env.sh file with the following:
-# export sender=
-# export sender_key=
-# These values will be sourced with the . env.sh call on Line 6
 # ----------------------------------------------------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------------------------------------------------
