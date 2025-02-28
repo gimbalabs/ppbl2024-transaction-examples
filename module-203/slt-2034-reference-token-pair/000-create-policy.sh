@@ -13,4 +13,4 @@ echo "{
     \"type\": \"sig\"
 }" >>mint-$token_name.script
 
-cardano-cli transaction policyid --script-file mint-$token_name.script >>$token_name.cs
+cardano-cli conway transaction policyid --script-file mint-$token_name.script >>$token_name.cs
