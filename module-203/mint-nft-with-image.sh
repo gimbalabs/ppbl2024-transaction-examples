@@ -54,8 +54,7 @@ token_hex=$(printf '%s' "$name" | xxd -p)
 echo "Minting $name"
 
 # Build Tx
-cardano-cli transaction build \
-  --babbage-era \
+cardano-cli conway transaction build \
   --testnet-magic 1 \
   --tx-in $tx_in \
   --tx-out $receiver_addr+"1500000 + $quantity $policy_id.$token_hex" \
@@ -67,7 +66,7 @@ cardano-cli transaction build \
   --out-file mint-nft.draft
 
 # Sign Tx
-cardano-cli transaction sign \
+cardano-cli conway transaction sign \
   --signing-key-file $mint_signing_key_file_path \
   --signing-key-file $sender_key \
   --testnet-magic 1 \
@@ -75,6 +74,6 @@ cardano-cli transaction sign \
   --out-file mint-nft.signed
 
 # Submit Tx
-cardano-cli transaction submit \
+cardano-cli conway transaction submit \
   --tx-file mint-nft.signed \
   --testnet-magic 1
