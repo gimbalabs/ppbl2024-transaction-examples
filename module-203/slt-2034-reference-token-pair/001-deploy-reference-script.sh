@@ -7,6 +7,9 @@ validator_path=$1
 ref_script_min_utxo_lovelace=$2
 ref=$3
 
+sender=
+sender_key=
+
 validator_addr=$(cardano-cli address build --testnet-magic 1 --payment-script-file $validator_path)
 
 tx_in=$(get_address_biggest_lovelace ${sender})
