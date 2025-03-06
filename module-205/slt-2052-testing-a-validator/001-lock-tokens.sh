@@ -1,6 +1,10 @@
 #!/bin/bash
 
-. ../env.sh # make sure to set your environment variables - see Lesson 205.2
+# Source the environment variables from env.sh
+# See Lesson 205.2 for details on what to include in env.sh.
+. ../env.sh  
+
+# Source utility functions (ensure utils.sh exists in the parent directory)
 . ../utils.sh
 
 validator_addr=$1
