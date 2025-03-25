@@ -29,7 +29,7 @@ echo "{
             \"bytes\": \"$admin_pkh\"
         }
     ]
-}" >slt-2054-datum-$ref.json
+}" >slt-2056-datum-$ref.json
 
 validator_addr=$(cardano-cli address build --testnet-magic 1 --payment-script-file $validator_path)
 
