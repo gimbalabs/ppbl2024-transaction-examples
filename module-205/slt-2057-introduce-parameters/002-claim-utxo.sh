@@ -10,7 +10,7 @@ reference_utxo=59bb6b0f541bde278c8c933c183fedb115882ae432904414321f4a7e9966de33#
 
 sender_tx_in=$(get_address_biggest_lovelace ${sender})
 
-validator_addr=$(cardano-cli address build --testnet-magic 1 --payment-script-file slt-2057.plutus)
+validator_addr=$(cardano-cli address build --testnet-magic 1 --payment-script-file slt2057.plutus)
 validator_tx_in=$(get_address_biggest_lovelace ${validator_addr})
 
 cardano-cli conway transaction build \
