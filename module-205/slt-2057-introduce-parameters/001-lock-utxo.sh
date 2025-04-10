@@ -24,9 +24,9 @@ echo "{
             \"int\": $unlock_time
         }
     ]
-}" >slt-2055-datum-$ref.json
+}" >slt2057-datum-$ref.json
 
-validator_addr=$(cardano-cli address build --testnet-magic 1 --payment-script-file slt-2057.plutus)
+validator_addr=$(cardano-cli address build --testnet-magic 1 --payment-script-file slt2057.plutus)
 
 tx_in=$(get_address_biggest_lovelace ${sender})
 
@@ -34,7 +34,7 @@ cardano-cli conway transaction build \
 	--testnet-magic 1 \
 	--tx-in $tx_in \
 	--tx-out $validator_addr+$lovelace_to_lock \
-	--tx-out-inline-datum-file slt-2057-datum-$ref.json \
+	--tx-out-inline-datum-file slt2057-datum-$ref.json \
 	--change-address $sender \
 	--out-file lock-tokens-slt2057-$ref.draft
 

@@ -22,7 +22,7 @@ Add these contents to `my-token-policy.script`, replacing the `keyHash` with the
 
 Finally, generate a token Policy ID from this new script:
 ```bash
-cardano-cli transaction policyid --script-file my-token-policy.script
+cardano-cli hash script --script-file my-token-policy.script
 ```
 
 
@@ -36,8 +36,7 @@ token_hex=7070626c323032342d73636166666f6c642d746f6b656e
 mint_script_file_path=my-token-policy.script
 sender=addr_test1qryqg2zrfyhh8qf2j8tg8zg42grnjanj6kjkwzqlrv0dynqey0knpanmr7ef6k2eagl2j4qdukh7r8zke92p56ah0crquj2ugx
 
-cardano-cli transaction build \
---babbage-era \
+cardano-cli conway transaction build \
 --testnet-magic 1 \
 --tx-in $tx_in \
 --tx-out $receiver+"1500000 + $quantity $policy_id.$token_hex" \
@@ -48,14 +47,14 @@ cardano-cli transaction build \
 --required-signer minting.skey \
 --out-file mint-native-assets.draft
 
-cardano-cli transaction sign \
+cardano-cli conway transaction sign \
 --signing-key-file minting.skey \
 --signing-key-file $sender_key \
 --testnet-magic 1 \
 --tx-body-file mint-native-assets.draft \
 --out-file mint-native-assets.signed
 
-cardano-cli transaction submit \
+cardano-cli conway transaction submit \
 --tx-file mint-native-assets.signed \
 --testnet-magic 1
 ```
